@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -12,13 +13,38 @@
 <body>
   <div class="container">
 
-    <h1>Small-ify your URLs!</h1>
+    <h1>Small-ify Your URLs</h1>
+    <hr/>
+
+    <blockquote>
+
+    <p>Pass a URL as a URL parameter and you'll receive a shortened URL in the JSON response.</p>
+
+    <p>If you pass an invalid URL that doesn't follow the valid <code>http://www.example.com</code> format, the JSON response will contain an error instead.</p>
+
+    <p>When you visit the shortened URL, you'll be redirected to your original link.</p>
+
+    </blockquote>
+
+    <h3>Example Usage:</h3>
+    <a href="https://small-ify.herokuapp.com/http://www.example.com/">https://small-ify.herokuapp.com/http://www.example.com/</a>
+
+    <h3>Example Output:</h3>
+    <p>The following JSON response will be returned.</p>
+    <pre><code>
+    {
+      url: http://www.example.com/,
+      shortUrl: https://small-ify.herokuapp.com/randomcharactershere
+    }
+    </code></pre>
 
   </div>
-</body>
 
 <footer>
+  <hr/>
   <p>Created with <i class="fa fa-heart" style="color: #FF5252"></i> by <a href="https://github.com/bethqiang">Beth Qiang</a></p>
 </footer>
+
+</body>
 
 </html>
