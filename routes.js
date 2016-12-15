@@ -8,11 +8,21 @@ router.get('/', (req, res, next) => {
   res.sendFile('index.html');
 });
 
+// Getting and navigating to a URL in the database
+router.get('/:linkNum', (req, res, next) => {
+  Link.findOne({
+    where: {
+      shortUrl: `https://small-ify.herokuapp.com/${req.params.linkNum}`
+    }
+  })
+  .then(data => {
+    res.redirect(data.url);
+  });
+});
+
 // Create or retrieve a shortened URL for a "long" URL
 // Not a huge fan of this 'get' method here - I think a 'post' would make more sense. But alas, project requirements...
 router.get('/api/:origUrl(*)', (req, res, next) => {
-  // need to verify if link is valid
-
   if (/^https?:\/\//.test(req.params.origUrl)) {
     Link.findOrCreate({
       where: {
