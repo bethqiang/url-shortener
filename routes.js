@@ -17,7 +17,8 @@ router.get('/:linkNum', (req, res, next) => {
   })
   .then(data => {
     res.redirect(data.url);
-  });
+  })
+  .catch(next);
 });
 
 // Create or retrieve a shortened URL for a "long" URL
@@ -42,7 +43,6 @@ router.get('/api/:origUrl(*)', (req, res, next) => {
       error: 'Please ensure your URL has a valid protocol.'
     });
   }
-
 });
 
 module.exports = router;
