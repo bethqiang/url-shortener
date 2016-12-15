@@ -8,10 +8,19 @@ const db = new Sequelize(databaseURI, {
 const Link = db.define('link', {
   url: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   shortUrl: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    unique: true
+  }
+}, {
+  hooks: {
+    beforeCreate(link) {
+      const randNum = Math.floor(Math.random() * 9000) + 1000;
+      link.shortUrl = `https://small-ify.herokuapp.com/${randNum}`;
+    }
   }
 });
 
