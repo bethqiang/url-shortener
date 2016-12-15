@@ -8,18 +8,23 @@
 
 > When you visit the shortened URL, you'll be redirected to your original link.
 
-### Example Usage:
+### Example Creation:
 
-[https://small-ify.herokuapp.com/http://www.example.com/](https://small-ify.herokuapp.com/http://www.example.com/)
+[https://small-ify.herokuapp.com/api/http://www.noodles.com/](https://small-ify.herokuapp.com/api/http://www.noodles.com/)
 
 ### Example Output:
 
 The following JSON response will be returned.
+
 ```
 {
-  url: http://www.example.com/,
-  shortUrl: https://small-ify.herokuapp.com/randomcharactershere
+  url: "http://www.noodles.com/",
+  shortUrl: "https://small-ify.herokuapp.com/9928"
 }
 ```
+
+### Example Usage:
+
+[https://small-ify.herokuapp.com/9928](https://small-ify.herokuapp.com/9928)
 
 Developed for a Free Code Camp project. Original project idea link: [https://www.freecodecamp.com/challenges/url-shortener-microservice](https://www.freecodecamp.com/challenges/url-shortener-microservice)
